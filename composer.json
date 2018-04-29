@@ -1,0 +1,25 @@
+{
+    "name": "afterbug/afterbug",
+    "description": "AfterBug error monitoring for PHP applications.",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Alfa Adhitya",
+            "email": "alfa@afterbug.net"
+        }
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "require": {
+        "php": ">=5.5",
+        "filp/whoops": "^2.1.4",
+        "guzzlehttp/guzzle": "^5.0|^6.0",
+        "league/pipeline": "^0.3.0"
+    },
+    "autoload": {
+        "psr-4" : {
+            "AfterBug\\" : "src/"
+        }
+    }
+}
