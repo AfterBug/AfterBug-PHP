@@ -47,10 +47,10 @@ class Client
      * Client constructor.
      *
      * @param Config $config
-     * @param ClientInterface $guzzle
+     * @param ClientInterface|null $guzzle
      * @param RequestInterface|null $request
      */
-    public function __construct(Config $config, ClientInterface $guzzle, RequestInterface $request = null)
+    public function __construct(Config $config, ClientInterface $guzzle = null, RequestInterface $request = null)
     {
         $this->config = $config;
         $this->pipeline = new Pipeline();
