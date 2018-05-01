@@ -9,7 +9,7 @@ class Config
      *
      * @var string
      */
-    const ENDPOINT = 'http://notify.afterbug.net';
+    const ENDPOINT = 'https://notify.afterbug.net';
 
     /**
      * The AfterBug API Key.
