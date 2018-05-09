@@ -56,7 +56,6 @@ class StackTrace
                 'class' => $frame->getClass(),
                 'function' => $frame->getFunction(),
                 'in_app' => $frame->isApplication(),
-                'args' => $frame->getArgs(),
                 'context' => $codeChunk,
                 'line_start' => $lineStart,
             ];
