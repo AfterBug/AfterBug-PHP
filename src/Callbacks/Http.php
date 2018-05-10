@@ -35,9 +35,8 @@ class Http
                 'cookies' => $this->request->getCookies(),
                 'session' => $this->request->getSession(),
                 'headers' => $this->request->getHeaders(),
-                'meta' => $this->request->getMetaData()
-            ]
+                'meta' => $this->request->getMetaData(),
+            ],
         ]);
     }
-
 }

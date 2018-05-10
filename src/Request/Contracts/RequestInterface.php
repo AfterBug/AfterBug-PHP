@@ -19,14 +19,14 @@ interface RequestInterface
     public function getCookies();
 
     /**
-     * Get the headers
+     * Get the headers.
      *
      * @return array
      */
     public function getHeaders();
 
     /**
-     * Get server variable
+     * Get server variable.
      *
      * @return array
      */

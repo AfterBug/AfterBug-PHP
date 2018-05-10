@@ -27,7 +27,7 @@ class NullRequest implements RequestInterface
     }
 
     /**
-     * Get the headers
+     * Get the headers.
      *
      * @return array
      */
@@ -37,7 +37,7 @@ class NullRequest implements RequestInterface
     }
 
     /**
-     * Get server variable
+     * Get server variable.
      *
      * @return array
      */

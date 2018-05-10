@@ -17,7 +17,7 @@ class HostName
         $config->setMetaData([
             'device' => [
                 'hostname' => php_uname('n'),
-            ]
+            ],
         ]);
     }
 }

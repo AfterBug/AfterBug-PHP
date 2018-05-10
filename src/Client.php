@@ -2,26 +2,26 @@
 
 namespace AfterBug;
 
-use AfterBug\Callbacks\HostName;
-use AfterBug\Callbacks\Http;
-use AfterBug\Callbacks\RequestUser;
-use AfterBug\Exceptions\Formatter;
-use AfterBug\Request\Contracts\RequestInterface;
-use AfterBug\Request\RequestManager;
-use BadMethodCallException;
 use Exception;
-use GuzzleHttp\ClientInterface;
-use GuzzleHttp\Client as Guzzle;
-use GuzzleHttp\RequestOptions;
+use BadMethodCallException;
+use AfterBug\Callbacks\Http;
 use League\Pipeline\Pipeline;
+use GuzzleHttp\RequestOptions;
+use GuzzleHttp\ClientInterface;
+use AfterBug\Callbacks\HostName;
+use GuzzleHttp\Client as Guzzle;
+use AfterBug\Exceptions\Formatter;
+use AfterBug\Callbacks\RequestUser;
+use AfterBug\Request\RequestManager;
+use AfterBug\Request\Contracts\RequestInterface;
 
 class Client
 {
-    const DEBUG     = 'debug';
-    const INFO      = 'info';
-    const WARNING   = 'warning';
-    const ERROR     = 'error';
-    const FATAL     = 'fatal';
+    const DEBUG = 'debug';
+    const INFO = 'info';
+    const WARNING = 'warning';
+    const ERROR = 'error';
+    const FATAL = 'fatal';
 
     /**
      * @var Config
@@ -62,7 +62,7 @@ class Client
      * Create new AfterBug instance.
      *
      * @param string|null $apiKey
-     * @param boolean $registerDefaultCallback
+     * @param bool $registerDefaultCallback
      * @return static
      */
     public static function make($apiKey = null, $registerDefaultCallback = true)
@@ -95,7 +95,7 @@ class Client
                 $key => Config::ENDPOINT,
                 'headers' => [
                     'AfterBug-Token' => $config->getApiKey(),
-                ]
+                ],
             ]
         );
 
