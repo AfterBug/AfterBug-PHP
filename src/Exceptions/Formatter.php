@@ -59,7 +59,7 @@ class Formatter
     }
 
     /**
-     * Translate a PHP Error constant into a log level group
+     * Translate a PHP Error constant into a log level group.
      *
      * @param string $severity PHP error constant
      * @return string Log level group

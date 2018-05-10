@@ -68,7 +68,7 @@ class RequestManager
     protected static function parseInput(array $server, $input)
     {
         if (! $input) {
-            return null;
+            return;
         }
 
         if (isset($server['CONTENT_TYPE']) && stripos($server['CONTENT_TYPE'], 'application/json') === 0) {
@@ -80,7 +80,5 @@ class RequestManager
 
             return (array) $params ?: null;
         }
-
-        return null;
     }
 }

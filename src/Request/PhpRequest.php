@@ -80,7 +80,7 @@ class PhpRequest implements RequestInterface
     }
 
     /**
-     * Get the headers
+     * Get the headers.
      *
      * @return array
      */
@@ -90,7 +90,7 @@ class PhpRequest implements RequestInterface
     }
 
     /**
-     * Get server variable
+     * Get server variable.
      *
      * @return array
      */
@@ -113,8 +113,6 @@ class PhpRequest implements RequestInterface
         if (isset($this->server['REMOTE_ADDR'])) {
             return $this->server['REMOTE_ADDR'];
         }
-
-        return null;
     }
 
     /**
@@ -124,8 +122,8 @@ class PhpRequest implements RequestInterface
      */
     protected function getCurrentUrl()
     {
-        $schema = ((!empty($this->server['HTTPS']) && $this->server['HTTPS'] !== 'off') || 
-            (!empty($this->server['SERVER_PORT']) && $this->server['SERVER_PORT'] == 443)) ? 'https://' : 'http://';
+        $schema = ((! empty($this->server['HTTPS']) && $this->server['HTTPS'] !== 'off') ||
+            (! empty($this->server['SERVER_PORT']) && $this->server['SERVER_PORT'] == 443)) ? 'https://' : 'http://';
 
         $host = isset($this->server['HTTP_HOST']) ? $this->server['HTTP_HOST'] : 'localhost';
 

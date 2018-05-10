@@ -2,8 +2,8 @@
 
 namespace AfterBug\Exceptions;
 
-use AfterBug\Client;
 use ErrorException;
+use AfterBug\Client;
 
 class ErrorHandler
 {
@@ -38,7 +38,7 @@ class ErrorHandler
     /**
      * @var array
      */
-    protected $fatalErrorTypes = array(
+    protected $fatalErrorTypes = [
         E_ERROR,
         E_PARSE,
         E_CORE_ERROR,
@@ -46,7 +46,7 @@ class ErrorHandler
         E_COMPILE_ERROR,
         E_COMPILE_WARNING,
         E_STRICT,
-    );
+    ];
 
     /**
      * ErrorHandler constructor.
@@ -76,7 +76,7 @@ class ErrorHandler
     /**
      * Register our handlers, optionally saving those previously registered.
      *
-     * @param  boolean $callExistingErrorHandler
+     * @param  bool $callExistingErrorHandler
      * @return static
      */
     protected function registerHandler($callExistingErrorHandler)

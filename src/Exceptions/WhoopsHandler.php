@@ -3,8 +3,8 @@
 namespace AfterBug\Exceptions;
 
 use AfterBug\Config;
-use Whoops\Handler\Handler;
 use Whoops\Util\Misc;
+use Whoops\Handler\Handler;
 
 class WhoopsHandler extends Handler
 {

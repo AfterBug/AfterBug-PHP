@@ -55,7 +55,6 @@ class Config
         'version' => '1.0.0',
     ];
 
-
     /**
      * Config constructor.
      *
@@ -121,7 +120,7 @@ class Config
     }
 
     /**
-     * Set user data
+     * Set user data.
      *
      * @param  array $user
      * @return $this
@@ -137,7 +136,7 @@ class Config
     }
 
     /**
-     * Get user data
+     * Get user data.
      *
      * @return array
      */
