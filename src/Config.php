@@ -41,6 +41,11 @@ class Config
     protected $applicationPaths;
 
     /**
+     * @var array
+     */
+    protected $userAttributes = ['id', 'name', 'email'];
+
+    /**
      * The notifier to report.
      *
      * @var array
@@ -93,6 +98,29 @@ class Config
     }
 
     /**
+     * Set user attributes that will be send to AfterBug server.
+     *
+     * @param array $attributes
+     * @return $this
+     */
+    public function setUserAttributes(array $attributes)
+    {
+        $this->userAttributes = $attributes;
+
+        return $this;
+    }
+
+    /**
+     * Get user attributes that will be send to AfterBug server.
+     *
+     * @return array
+     */
+    private function getUserAttributes()
+    {
+        return (array) $this->userAttributes;
+    }
+
+    /**
      * Set user data
      *
      * @param  array $user
@@ -100,7 +128,10 @@ class Config
      */
     public function setUser(array $user)
     {
-        $this->user = $user;
+        $this->user = array_intersect_key(
+            $user,
+            array_flip($this->getUserAttributes())
+        );
 
         return $this;
     }
