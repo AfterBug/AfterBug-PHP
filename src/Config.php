@@ -46,6 +46,11 @@ class Config
     protected $userAttributes = ['id', 'name', 'email'];
 
     /**
+     * @var array
+     */
+    protected $excludeExceptions = [];
+
+    /**
      * The notifier to report.
      *
      * @var array
@@ -209,5 +214,28 @@ class Config
     public function getEnvironment()
     {
         return $this->environment ?: 'local';
+    }
+
+    /**
+     * Set exceptions to exclude.
+     *
+     * @param array $exceptions
+     * @return $this
+     */
+    public function setExcludeExceptions(array $exceptions)
+    {
+        $this->excludeExceptions = $exceptions;
+
+        return $this;
+    }
+
+    /**
+     * Get exclude exceptions.
+     *
+     * @return array
+     */
+    public function getExcludeExceptions()
+    {
+        return $this->excludeExceptions;
     }
 }

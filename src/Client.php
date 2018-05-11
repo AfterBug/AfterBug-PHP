@@ -144,6 +144,10 @@ class Client
      */
     public function catchException($exception)
     {
+        if (in_array(get_class($exception), $this->config->getExcludeExceptions())) {
+            return;
+        }
+
         $data = Formatter::make($exception, $this->config)->toArray();
 
         try {
