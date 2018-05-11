@@ -74,7 +74,7 @@ class Config
      * Get AfterBug API Key.
      *
      * @return string
-     */q
+     */
     public function getApiKey()
     {
         return $this->apiKey;
