@@ -57,7 +57,7 @@ class Config
      */
     protected $sdk = [
         'name' => 'AfterBug PHP',
-        'version' => '1.0.0',
+        'version' => '1.0.1',
     ];
 
     /**
@@ -74,7 +74,7 @@ class Config
      * Get AfterBug API Key.
      *
      * @return string
-     */
+     */q
     public function getApiKey()
     {
         return $this->apiKey;
