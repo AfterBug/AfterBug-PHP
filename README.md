@@ -44,6 +44,16 @@ AfterBug\Exceptions\ErrorHandler::register($afterbug);
 throw new \Exception('testing exception handler');
 ```
 
+### Exclude exceptions
+
+Sets for which exception classes we should not send to AfterBug.
+
+```php
+$afterbug->registerCallback(function ($config) {
+    $config->setExcludeExceptions(['Namespace\ExceptionClass']);
+});
+```
+
 ### Callbacks
 
 Set a callback to customize the data.
