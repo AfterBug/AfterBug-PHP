@@ -138,6 +138,28 @@ class Client
     }
 
     /**
+     * Send exception data to AfterBug.
+     *
+     * @param  array $data
+     * @return \Psr\Http\Message\ResponseInterface|\GuzzleHttp\Message\ResponseInterface
+     */
+    private function send($data)
+    {
+        if (version_compare(ClientInterface::VERSION, '5') === 1) {
+            return $this->guzzle->post('/', [
+                'headers' => [
+                    'AfterBug-Token' => $this->config->getApiKey(),
+                ],
+                'json' => $data,
+            ]);
+        }
+
+        return $this->guzzle->request('POST', '/', [
+            RequestOptions::JSON => $data,
+        ]);
+    }
+
+    /**
      * Notify AfterBug of an exception.
      *
      * @param \Exception|\Throwable $exception the exception to notify AfterBug.
@@ -148,12 +170,10 @@ class Client
             return;
         }
 
-        $data = Formatter::make($exception, $this->config)->toArray();
-
         try {
-            $this->guzzle->request('POST', '/', [
-                RequestOptions::JSON => $data,
-            ]);
+            $this->send(
+                Formatter::make($exception, $this->config)->toArray()
+            );
         } catch (Exception $exception) {
             error_log('AfterBug Error: Couldn\'t notify. '.$exception->getMessage());
         }

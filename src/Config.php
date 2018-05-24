@@ -57,7 +57,7 @@ class Config
      */
     protected $sdk = [
         'name' => 'AfterBug PHP',
-        'version' => '1.0.1',
+        'version' => '1.0.2',
     ];
 
     /**
